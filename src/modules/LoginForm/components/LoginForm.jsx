@@ -17,12 +17,11 @@ const LoginForm = () => {
       <Block>
         <Form name="normal_login"
           className="login-form"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}>
+          initialValues={{ remember: true }}>
           <Form.Item
             name="username"
             rules={[{ required: true, message: 'Пожалуйста введите имя пользователя!' }]}
-            hasFeedback validateStatus="success">
+            hasFeedback >
             <Input prefix={
               <UserOutlined className="site-form-item-icon"/>} 
                 placeholder="Имя пользователя"

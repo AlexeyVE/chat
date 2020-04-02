@@ -26,4 +26,24 @@
     line-height: 0.1px;
     color: #1890ff;
   }
+  &__success-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 400px;
+    svg {
+      height: 50px;
+      width: 50px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    p {
+          line-height: 21px;
+      letter-spacing: 0.1px;
+      opacity: 0.5;
+    }
+  }
 }

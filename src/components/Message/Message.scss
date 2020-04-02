@@ -1,0 +1,180 @@
+@import "~styles/variables";
+
+.message {
+  $self: &;
+  display: flex;
+  max-width: 440px;
+  margin: 0 20px;
+  &__avatar {
+    display: flex;
+    flex-direction: column-reverse; 
+    img {
+      margin-right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-bottom: 23px;
+      margin-top: 14px;
+    }
+  }
+  &__bubble {
+    background: $blue;
+    box-shadow: $custom_shadow;
+    border-radius: 12px 12px 12px 0;
+    padding: 15px;
+    margin-bottom: 8px;
+  }
+  &__text {
+    color: #fff;
+    line-height: 20px;
+  }
+  &__date {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  &__content {
+    margin-bottom: 15px;
+  }
+  &__attachments {
+    display: flex;
+    margin-bottom: 5px;
+    &-item {
+      img{
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        margin-right: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
+  &--audio {
+    #{$self}__audio {
+      width: 250px;
+      transition: all .5s ease;
+      &-duration {
+        color: #fff;
+      }
+    }
+  }
+  &--only-img {
+    #{$self}__attachments{
+      &-item{
+        img {
+          width: 125px;
+          height: 125px;
+        }
+      }
+    }
+  }
+  &--isme {
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+
+    #{$self}__attachments {
+      flex-direction: row-reverse;
+    }
+
+    #{$self}__date {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    #{$self}__content {
+      /*margin-bottom: 15px;*/
+      flex-direction: row-reverse;
+      span.readed {
+        color: $blue;
+      }
+    }
+    #{$self}__bubble {
+      background: #fff;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.02);
+      border:1px solid #ececec;
+      border-radius: 12px 12px 0 12px;
+    }
+
+    #{$self}__text {
+      color: $black;
+    }
+    #{$self}__avatar {
+      img {
+        margin-left: 12px;
+      }
+    }
+  }
+  &--is-typing {
+    #{$self}__bubble{
+      background-color:$typing_bg;
+    }    
+  }
+  &__typing {
+    span {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: $typing_circle;
+      display: inline-block;
+      margin-right: 8px;
+      opacity: 0.5;
+
+      &:nth-of-type(1) {
+        animation: cycleOne  1s ease  infinite;
+        animation-direction: normal;
+      }
+      &:nth-of-type(2) {
+        animation: cycleTwo  1s ease infinite;
+        animation-direction: normal;
+      }
+      &:nth-of-type(3){
+        animation: cycleThree  1s ease infinite;
+        animation-direction: normal;
+      }
+    }
+  }
+}
+@keyframes cycleOne{
+  0%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  33.333%{
+    background: rgba(166, 189, 240, 1);
+  }
+  66.6667%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  100%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+}
+
+@keyframes cycleTwo{
+  0%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  33.333%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  66.6667%{
+    background: rgba(166, 189, 240, 1);
+  }
+  100%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+}
+
+@keyframes cycleThree{
+  0%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  33.333%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  66.6667%{
+    background: rgba(166, 189, 240, 0.5);
+  }
+  100%{
+    background: rgba(166, 189, 240, 1);
+  }
+}

@@ -1,4 +1,6 @@
+@import '~reset-css';
 @import '~antd/dist/antd.css';
+@import 'layouts/chat.scss';
 
 body,
 html,
@@ -6,6 +8,8 @@ html,
 .wrapper {
   height: 100%;
   color: #202020;
+  font-size: 14px;
+  background-color: #f4f7fd
 }
 
 body {

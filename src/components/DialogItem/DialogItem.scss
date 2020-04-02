@@ -1,0 +1,70 @@
+.dialogs {
+  width: 100%;
+  margin-bottom: 20px;
+  &__item {
+    display: flex;
+    margin-bottom: 0;
+    padding: 10px 20px;
+
+   &.active, &:hover {
+      background-color: #f3f7ff;
+      cursor: pointer;
+    }
+
+    &-avatar {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      &-online {
+        left: 30px;
+        bottom: 15px;
+        span.ant-badge-status-dot {
+          width: 12px;
+          height: 12px;
+          border:2px solid #fff;
+        }
+      }  
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+
+      &-top {
+        display: flex;
+
+        b {
+          font-weight: 500;
+          font-size: 14px;
+          flex: 1;
+          margin-bottom: 6px;
+        }
+
+        time {
+          opacity: 0.5;
+        }
+      }
+
+      &-bottom {
+
+        p {
+          width: 200px;
+          overflow: hidden;
+          display: inline-block;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

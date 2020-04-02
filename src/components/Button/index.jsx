@@ -8,7 +8,7 @@ import './Button.scss'
 const Button = props => {
   return (
     <BaseButton {...props} 
-      className={classNames('button', props.className, {'button__large':props.size==='large'})} />
+      className={classNames('button', props.className, {'button--large':props.size==='large'})} />
   )
 }
 

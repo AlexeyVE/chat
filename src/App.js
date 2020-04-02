@@ -1,11 +1,23 @@
 import React from 'react'
-import { Auth } from './pages'
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+import {
+  Auth,
+  Home,
+  NotFound
+} from './pages'
 
 const App = () => {
   return (
-    <div className = "wrapper">
-      <Auth />
-    </div>
+    <Router>
+      <div className = "wrapper">
+        <Route exact path={["/", "/login", "/register"]} component={Auth} />
+        <Route exact path="/im" component={Home} /> 
+      </div>
+    </Router>
   )
 }
 
